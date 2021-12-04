@@ -6,6 +6,11 @@
   "repository": "https://github.com/utkusarioglu/sumer-web-dapp.git",
   "author": "Utku Sarioglu <utkusarioglu@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "yarn webpack serve --open",
+    "build": "webpack",
+    "test": "jest"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
