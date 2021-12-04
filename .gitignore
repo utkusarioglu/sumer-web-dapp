@@ -3,3 +3,4 @@
 !example.env
 *.log
 /tsBuildInfo.json
+/build

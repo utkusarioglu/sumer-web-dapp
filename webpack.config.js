@@ -11,7 +11,7 @@ module.exports = {
   devtool: "source-map",
   output: {
     filename: "[name].[contenthash].js",
-    path: path(__dirname, "lib"),
+    path: path.join(__dirname, "build"),
     clean: true,
     sourceMapFilename: "[name].[contenthash].js.map",
   },
