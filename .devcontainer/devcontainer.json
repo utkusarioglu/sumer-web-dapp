@@ -1,0 +1,15 @@
+{
+	"name": "web-dapp",
+	"dockerComposeFile": [
+		"../docker-compose.dev.yml",
+		"docker-compose.yml"
+	],
+	"service": "web-dapp",
+	"workspaceFolder": "/usr/src/app/web-dapp",
+	"settings": {
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#056"
+    }
+  },
+	"extensions": []
+}

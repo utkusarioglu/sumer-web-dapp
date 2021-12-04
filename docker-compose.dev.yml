@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  web-dapp:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    working_dir: /usr/src/app/web-dapp
+    volumes:
+      - .:/usr/src/app/web-dapp
