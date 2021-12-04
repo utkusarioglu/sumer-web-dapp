@@ -1,0 +1,9 @@
+{
+  "name": "sumer-web-dapp",
+  "version": "1.0.0",
+  "description": "WebDapp for sumer project",
+  "main": "lib/index.js",
+  "repository": "https://github.com/utkusarioglu/sumer-web-dapp.git",
+  "author": "Utku Sarioglu <utkusarioglu@hotmail.com>",
+  "license": "MIT"
+}
