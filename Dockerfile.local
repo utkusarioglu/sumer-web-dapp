@@ -1,0 +1,10 @@
+FROM node:alpine as BUILDER
+WORKDIR /usr/src/app
+COPY web-dapp web-dapp
+WORKDIR /usr/src/app/web-dapp
+RUN yarn build
+
+FROM nginx:alpine
+
+EXPOSE 80
+COPY --from=BUILDER /usr/src/app/web-dapp/build /usr/share/nginx/html
