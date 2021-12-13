@@ -1,29 +1,17 @@
-import { type PayloadAction, type Selector, createSlice } from "@reduxjs/toolkit";
-import { dispatch, type RootState } from "_/__store";
-
-
-type Data = any;
-type List = Data[];
-
-interface BlockState<T> {
-  time: number;
-  list: T;
-}
+import { type PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { dispatch } from "_/__store";
+import type { BlockState, List, Data, Push, SelectLatest, SelectList } from "./blocks.slice.types";
 
 const initialState: BlockState<List> = {
   time: 0,
   list: [],
 };
 
-type Push<T> = (data: T) => void;
-type SelectLatest<T> = Selector<RootState, T>
-type SelectList<T> = Selector<RootState, T[]>
-
 const { actions, reducer, name } = createSlice({
   name: "blocks",
   initialState,
   reducers: {
-    push: (state, { payload }: PayloadAction<any>) => {
+    push: (state, { payload }: PayloadAction<Data>) => {
       return {
         time: Date.now(),
         list: [payload, ...state.list],
@@ -34,6 +22,6 @@ const { actions, reducer, name } = createSlice({
 
 export default reducer;
 
-export const push: Push<Data> = (data) => dispatch(actions.push(data));
-export const selectLatest: SelectLatest<Data> = (state) => state[name].list[0]
-export const selectList: SelectList<Data> = (state) => state[name].list
+export const push: Push = (data) => dispatch(actions.push(data));
+export const selectLatest: SelectLatest = (state) => state[name].list[0]
+export const selectList: SelectList = (state) => state[name].list
