@@ -13,8 +13,15 @@ export class EthereumService {
 
   listen({ newBlockCallback }: InitParams) {
     this.provider.on("block", async (blockNum) => {
-      const blockContent = await this.provider.getBlock(blockNum);
-      newBlockCallback(blockContent);
+      const { hash, parentHash, timestamp, difficulty, transactions } =
+        await this.provider.getBlock(blockNum);
+      newBlockCallback({
+        hash,
+        parentHash,
+        timestamp,
+        difficulty,
+        transactionCount: transactions.length,
+      });
     });
   }
 }
