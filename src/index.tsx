@@ -1,3 +1,8 @@
 import ReactDOM from "react-dom";
+import io from "_services/io/io.service";
 
-ReactDOM.render(<p>hi</p>, document.getElementById("root"));
+setTimeout(() => {
+  console.log(io);
+}, 1000);
+
+ReactDOM.render(<h2>open console01</h2>, document.getElementById("root"));
