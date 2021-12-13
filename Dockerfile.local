@@ -9,3 +9,4 @@ FROM nginx:alpine
 
 EXPOSE 80
 COPY --from=BUILDER /usr/src/app/web-dapp/build /usr/share/nginx/html
+# TODO this container needs to be non-root
