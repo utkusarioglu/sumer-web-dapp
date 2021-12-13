@@ -16,6 +16,10 @@ module.exports = {
     sourceMapFilename: "[name].[contenthash].js.map",
   },
 
+  performance: {
+    hints: false,
+  },
+
   module: {
     rules: [
       {
