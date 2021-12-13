@@ -2,13 +2,13 @@ version: "3.9"
 services:
   web-dapp:
     volumes:
-        # vscode
+      # vscode
       - vscode-exts:/root/.vscode-server/extensions
       - vscode-exts-insiders:/root/.vscode-server-insiders/extensions
         # gh cli
       - ~/.config/gh:/root/.config/gh:ro
         # k8s
-      - ~/.kube/config:/root/.kube/config
+      - ~/.kube/config:/home/node/.kube/config
     command: /bin/sh -c "while sleep 1000; do :; done"
 
 volumes:
