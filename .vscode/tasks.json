@@ -29,6 +29,16 @@
       "problemMatcher": [],
       "label": "yarn dev",
       "detail": "Start development server"
+    },
+    {
+      "label": "bridge-to-kubernetes.resource",
+      "type": "bridge-to-kubernetes.resource",
+      "resource": "web-dapp",
+      "resourceType": "service",
+      "ports": [80],
+      "targetCluster": "docker-desktop",
+      "targetNamespace": "sumer",
+      "useKubernetesServiceEnvironmentVariables": true
     }
   ]
 }
