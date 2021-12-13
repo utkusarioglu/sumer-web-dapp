@@ -1,12 +1,5 @@
-FROM node:alpine
-RUN apk add git --no-cache
-RUN apk add vim --no-cache
-RUN apk add curl --no-cache
-
-# from https://github.com/cli/cli/issues/658
-RUN mkdir /ghcli
-WORKDIR /ghcli
-RUN wget https://github.com/cli/cli/releases/download/v2.2.0/gh_2.2.0_linux_386.tar.gz -O ghcli.tar.gz
-RUN tar --strip-components=1 -xf ghcli.tar.gz
-RUN mv /ghcli/bin/gh /usr/bin/
-RUN rm -rf /ghcli
+FROM node:17-slim
+RUN apt-get update
+RUN apt-get install git -y
+RUN apt-get install vim -y
+RUN apt-get install curl -y
