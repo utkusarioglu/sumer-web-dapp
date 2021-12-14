@@ -24,6 +24,7 @@
       "_slices/*": ["./src/slices/*"],
       "_errors": ["./src/errors"],
       "_types/*": ["./src/types/*"],
+      "_utils/*": ["./src/utils/*"],
       "_ethereum-deployments/*": ["./vendors/ethereum/deployments/*"],
       "_ethereum-types/*": ["./vendors/ethereum/types/*"],
       "_config": ["./src/config.ts"],
