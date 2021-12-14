@@ -5,6 +5,7 @@ import BottomNavigationView from "_views/bottom-navigation/BottomNavigation.view
 const AppLayout = () => {
   return (
     <>
+      <AppBarView />
     </>
   );
 };
