@@ -3,7 +3,10 @@ const TsConfigPathsWebpackPlugin = require("tsconfig-paths-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const DotEnvWebpack = require("dotenv-webpack");
-const { SourceMapDevToolPlugin } = require("webpack");
+const {
+  SourceMapDevToolPlugin,
+  HotModuleReplacementPlugin,
+} = require("webpack");
 
 module.exports = {
   mode: process.env.NODE_ENV || "production",
@@ -53,6 +56,7 @@ module.exports = {
   },
 
   plugins: [
+    new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: "sumer",
       template: path.join(__dirname, "public", "index.html"),
