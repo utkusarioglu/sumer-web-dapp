@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import blocks from "_slices/blocks/blocks.slice";
+import user from "_slices/user/user.slice";
 
 const store = configureStore({
   reducer: {
     blocks,
+    user,
   },
 });
 
