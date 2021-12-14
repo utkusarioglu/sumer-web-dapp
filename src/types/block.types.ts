@@ -3,5 +3,6 @@ export type Block = {
   parentHash: string;
   timestamp: number;
   difficulty: number;
-  transactionCount: number;
+  transactions: string[];
+  imageUrl: string;
 };
