@@ -28,11 +28,11 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: "ts-loader",
-        exclude: /node_modules/,
+        include: path.join(__dirname, "src"),
       },
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        include: path.join(__dirname, "src"),
         use: {
           loader: "babel-loader",
           options: {
