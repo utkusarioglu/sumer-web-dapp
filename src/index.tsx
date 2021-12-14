@@ -1,3 +1,4 @@
+/// <reference path="./types/vendors/cool-images.d.ts" />
 import ReactDOM from "react-dom";
 import io from "_services/io/io.service";
 
