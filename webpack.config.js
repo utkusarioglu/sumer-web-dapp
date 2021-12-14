@@ -44,6 +44,8 @@ module.exports = {
   },
 
   devServer: {
+    hot: true,
+    open: false,
     client: {
       overlay: false,
     },
