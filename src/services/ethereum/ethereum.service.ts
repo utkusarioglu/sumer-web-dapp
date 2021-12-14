@@ -1,6 +1,7 @@
 import { ethers } from "ethers";
 import { INFURA_API_KEY } from "_/__config";
 import { InitParams } from "./ethereum.service.types";
+import coolImages from "cool-images";
 
 export class EthereumService {
   private provider: InstanceType<typeof ethers.providers.InfuraProvider>;
@@ -20,7 +21,8 @@ export class EthereumService {
         parentHash,
         timestamp,
         difficulty,
-        transactionCount: transactions.length,
+        transactions,
+        imageUrl: coolImages.one(),
       });
     });
   }
