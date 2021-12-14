@@ -43,6 +43,7 @@
     "@mui/icons-material": "^5.2.1",
     "@mui/material": "^5.2.3",
     "@reduxjs/toolkit": "^1.7.0",
+    "boring-avatars": "^1.5.8",
     "cool-images": "^1.0.3",
     "dotenv": "^10.0.0",
     "ethers": "^5.5.2",
