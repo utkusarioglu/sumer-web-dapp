@@ -5,7 +5,7 @@ import type {
   SetUser,
   SelectUser
 } from "./user.slice.types";
-import type { User } from "_/vendors/randomuser-me"
+import type { User } from "_/types/vendors/randomuser-me"
 
 const initialState: State = {
   isLoaded: false
