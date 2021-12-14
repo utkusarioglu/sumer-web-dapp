@@ -1,9 +1,22 @@
 /// <reference path="./types/vendors/cool-images.d.ts" />
 import ReactDOM from "react-dom";
-import io from "_services/io/io.service";
+import store from "_/__store";
+import { Provider } from "react-redux";
+import AppLayout from "_layouts/app/App.layout";
+import CssBaseline from "@mui/material/CssBaseline";
+import { startEthereum, startUser } from "_/__startup";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "_/__theme";
 
-setTimeout(() => {
-  console.log(io);
-}, 1000);
+ReactDOM.render(
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AppLayout />
+    </ThemeProvider>
+  </Provider>,
+  document.getElementById("root")
+);
 
-ReactDOM.render(<h2>open console01</h2>, document.getElementById("root"));
+startUser();
+startEthereum();
