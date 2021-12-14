@@ -6,6 +6,7 @@ const AppLayout = () => {
   return (
     <>
       <AppBarView />
+      <BlockListView />
       <BottomNavigationView />
     </>
   );
