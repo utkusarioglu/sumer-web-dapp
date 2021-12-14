@@ -1,5 +1,4 @@
 import AppBar from "@mui/material/AppBar";
-// container toolbar typography avatar button tooltip
 import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -47,4 +46,5 @@ const AppBarView = () => {
   );
 };
 
+export const AppBarShimView = () => <Box sx={{ height: 60 }} />;
 export default AppBarView;

@@ -5,6 +5,7 @@ import Paper from "@mui/material/Paper";
 import Inventory2Icon from "@mui/icons-material/Inventory2";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import ReceiptIcon from "@mui/icons-material/Receipt";
+import Box from "@mui/material/Box";
 
 const BottomNavigationView = () => {
   const [value, setValue] = useState(0);
@@ -31,5 +32,7 @@ const BottomNavigationView = () => {
     </Paper>
   );
 };
+
+export const BottomNavigationShimView = () => <Box sx={{ height: 80 }} />;
 
 export default BottomNavigationView;
