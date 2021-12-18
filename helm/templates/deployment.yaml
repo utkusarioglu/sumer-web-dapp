@@ -50,6 +50,11 @@ spec:
           env:
             - name: NODE_ENV
               value: {{ .Values.nodeEnv }}
+            - name: INFURA_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: ethereum
+                  key: infura-api-key
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
