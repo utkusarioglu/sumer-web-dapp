@@ -7,7 +7,7 @@
   "author": "Utku Sarioglu <utkusarioglu@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn webpack serve --open",
+    "dev": "yarn webpack serve",
     "build": "webpack",
     "test": "jest"
   },
