@@ -9,6 +9,8 @@ import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import { useSelector } from "react-redux";
 import { selectUser } from "_/slices/user/user.slice";
+import { setUserDrawerOpen } from "_/slices/app/app.slice";
+import { setAppDrawerOpen } from "_/slices/app/app.slice";
 
 const AppBarView = () => {
   const user = useSelector(selectUser);
@@ -23,6 +25,7 @@ const AppBarView = () => {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={() => setAppDrawerOpen(true)}
           >
             <MenuIcon />
           </IconButton>
@@ -31,15 +34,15 @@ const AppBarView = () => {
               App
             </Typography>
           </Box>
-          <Tooltip title="Open User menu">
-            <IconButton sx={{ p: 0 }}>
-              {user.isLoaded ? (
+          {user.isLoaded ? (
+            <IconButton sx={{ p: 0 }} onClick={() => setUserDrawerOpen(true)}>
+              <Tooltip title="Open User menu">
                 <Avatar alt={user.name.first} src={user.picture.thumbnail} />
-              ) : (
-                <Avatar alt="Loading..." src="" />
-              )}
+              </Tooltip>
             </IconButton>
-          </Tooltip>
+          ) : (
+            <Avatar alt="Loading..." src="" />
+          )}
         </Toolbar>
       </Container>
     </AppBar>
