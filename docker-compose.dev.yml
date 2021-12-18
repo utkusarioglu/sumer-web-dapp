@@ -8,3 +8,4 @@ services:
     working_dir: /usr/src/app/web-dapp
     volumes:
       - .:/usr/src/app/web-dapp
+      - ../wasm:/usr/src/app/wasm
