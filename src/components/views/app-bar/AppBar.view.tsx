@@ -31,7 +31,7 @@ const AppBarView = () => {
           </IconButton>
           <Box sx={{ flexGrow: 1 }}>
             <Typography variant="h6" noWrap component="div" align="center">
-              App
+              Sumer
             </Typography>
           </Box>
           {user.isLoaded ? (
