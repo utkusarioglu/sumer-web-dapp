@@ -44,12 +44,11 @@ module.exports = {
   },
 
   devServer: {
-    hot: true,
     open: false,
     client: {
       overlay: false,
     },
-    port: 80,
+    port: process.env.PORT || 3000,
   },
 
   resolve: {
