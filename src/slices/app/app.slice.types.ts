@@ -21,3 +21,6 @@ export type SelectShareDrawerOpen = Selector<
   RootState,
   State["shareDrawerOpen"]
 >;
+
+export type SelectColorMode = Selector<RootState, State["colorMode"]>;
+export type SetColorMode = (mode: State["colorMode"]) => void;

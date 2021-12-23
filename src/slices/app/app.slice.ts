@@ -9,6 +9,8 @@ import type {
   SelectAppDrawerOpen,
   SelectWeb3DrawerOpen,
   SetWeb3DrawerOpen,
+  SelectColorMode,
+  SetColorMode,
 } from "./app.slice.types";
 import { userColorModePreference } from "_/utils/color-mode.utils";
 
@@ -37,6 +39,15 @@ const { actions, reducer, name } = createSlice({
         [`${payload.name}DrawerOpen`]: payload.state,
       };
     },
+    setColorMode: (state, { payload }: PayloadAction<State["colorMode"]>) => {
+      const colorMode = ["light", "dark"].includes(payload)
+        ? payload
+        : userColorModePreference();
+      return {
+        ...state,
+        colorMode,
+      };
+    },
   },
 });
 
@@ -57,3 +68,7 @@ export const setWeb3DrawerOpen: SetWeb3DrawerOpen = (state) =>
 export const selectWeb3DrawerOpen: SelectWeb3DrawerOpen = (state) =>
   state[name].web3DrawerOpen;
 
+export const selectColorMode: SelectColorMode = (state) =>
+  state[name].colorMode;
+export const setColorMode: SetColorMode = (mode) =>
+  dispatch(actions.setColorMode(mode));
