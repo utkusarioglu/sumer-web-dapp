@@ -4,7 +4,7 @@ import Drawer from "@mui/material/Drawer";
 import Divider from "@mui/material/Divider";
 import { useSelector } from "react-redux";
 import { selectAppDrawerOpen, setAppDrawerOpen } from "_/slices/app/app.slice";
-import WasmView from "_views/wasm/Wasm.view";
+// import WasmView from "_views/wasm/Wasm.view";
 import ColorModeSwitchView from "_views/color-mode-switch/ColorModeSwitch.view";
 
 function AppDrawerView() {
@@ -13,8 +13,8 @@ function AppDrawerView() {
   return (
     <Drawer anchor="left" open={state} onClose={() => setAppDrawerOpen(false)}>
       <Box sx={{ width: 250 }}>
-        <Divider />
-        <WasmView />
+        {/* <Divider /> */}
+        {/* <WasmView /> */}
         <Divider />
         <Container>
           <ColorModeSwitchView />
