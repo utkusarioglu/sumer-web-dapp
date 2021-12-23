@@ -1,4 +1,5 @@
 /// <reference path="./types/vendors/cool-images.d.ts" />
+import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import store from "_/__store";
 import { Provider } from "react-redux";
@@ -8,12 +9,14 @@ import { startEthereum, startUser } from "_/__startup";
 import Theme from "_/__theme";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Theme>
-      <CssBaseline />
-      <AppLayout />
-    </Theme>
-  </Provider>,
+  <StrictMode>
+    <Provider store={store}>
+      <Theme>
+        <CssBaseline />
+        <AppLayout />
+      </Theme>
+    </Provider>
+  </StrictMode>,
   document.getElementById("root")
 );
 
