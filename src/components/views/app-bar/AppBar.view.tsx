@@ -8,12 +8,13 @@ import Tooltip from "@mui/material/Tooltip";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import { useSelector } from "react-redux";
-import { selectUser } from "_/slices/user/user.slice";
-import { setUserDrawerOpen } from "_/slices/app/app.slice";
+import { selectUserProfile } from "_/slices/user/user.slice";
+import { setUserDrawerOpen, setWeb3DrawerOpen } from "_/slices/app/app.slice";
 import { setAppDrawerOpen } from "_/slices/app/app.slice";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 
 const AppBarView = () => {
-  const user = useSelector(selectUser);
+  const userProfile = useSelector(selectUserProfile);
 
   return (
     <AppBar position="fixed">
@@ -34,12 +35,22 @@ const AppBarView = () => {
               Sumer
             </Typography>
           </Box>
-          {user.isLoaded ? (
-            <IconButton sx={{ p: 0 }} onClick={() => setUserDrawerOpen(true)}>
-              <Tooltip title="Open User menu">
-                <Avatar alt={user.name.first} src={user.picture.thumbnail} />
-              </Tooltip>
-            </IconButton>
+          {!!userProfile ? (
+            <>
+              <IconButton sx={{ p: 0 }} onClick={() => setWeb3DrawerOpen(true)}>
+                <Tooltip title="Open wallet">
+                  <AccountBalanceWalletIcon />
+                </Tooltip>
+              </IconButton>
+              <IconButton sx={{ p: 0 }} onClick={() => setUserDrawerOpen(true)}>
+                <Tooltip title="Open User menu">
+                  <Avatar
+                    alt={userProfile.name.first}
+                    src={userProfile.picture.thumbnail}
+                  />
+                </Tooltip>
+              </IconButton>
+            </>
           ) : (
             <Avatar alt="Loading..." src="" />
           )}
