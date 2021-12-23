@@ -6,6 +6,7 @@ const DotEnvWebpack = require("dotenv-webpack");
 const {
   SourceMapDevToolPlugin,
   HotModuleReplacementPlugin,
+  ProvidePlugin,
 } = require("webpack");
 
 module.exports = {
@@ -64,5 +65,9 @@ module.exports = {
     }),
     new DotEnvWebpack(),
     new SourceMapDevToolPlugin({}),
+    // required by walletconnect v1
+    new ProvidePlugin({
+      Buffer: ["buffer", "Buffer"],
+    }),
   ],
 };
