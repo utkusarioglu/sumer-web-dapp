@@ -7,6 +7,7 @@ export type State = {
   shareDrawerOpen: boolean;
   web3DrawerOpen: boolean;
   colorMode: "dark" | "light";
+  web3Connected: boolean;
 };
 
 export type SetUserDrawerOpen = (state: boolean) => void;
@@ -22,5 +23,7 @@ export type SelectShareDrawerOpen = Selector<
   State["shareDrawerOpen"]
 >;
 
+export type SetWeb3Connected = (state: boolean) => void;
+export type SelectWeb3Connected = Selector<RootState, State["web3Connected"]>;
 export type SelectColorMode = Selector<RootState, State["colorMode"]>;
 export type SetColorMode = (mode: State["colorMode"]) => void;
