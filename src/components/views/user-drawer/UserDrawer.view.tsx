@@ -14,15 +14,14 @@ import {
   selectUserDrawerOpen,
   setUserDrawerOpen,
 } from "_/slices/app/app.slice";
-import { selectUser } from "_slices/user/user.slice";
+import { selectUserProfile } from "_slices/user/user.slice";
 import { Typography } from "@mui/material";
-import WasmView from "_views/wasm/Wasm.view";
 
 function UserDrawerView() {
   const state = useSelector(selectUserDrawerOpen);
-  const user = useSelector(selectUser);
+  const userProfile = useSelector(selectUserProfile);
 
-  if (!user.isLoaded) {
+  if (!userProfile) {
     return null;
   }
 
@@ -35,16 +34,14 @@ function UserDrawerView() {
       <Box sx={{ width: 250 }}>
         <Container>
           <Avatar
-            src={user.picture.large}
+            src={userProfile.picture.large}
             sx={{ width: 150, height: 150, mx: "auto", mt: 3, mb: 2 }}
           />
           <Typography variant="h6" align="center">
-            {user.name.first} {user.name.last}
+            {userProfile.name.first} {userProfile.name.last}
           </Typography>
-          <Typography align="center">{user.email}</Typography>
+          <Typography align="center">{userProfile.email}</Typography>
         </Container>
-        <Divider />
-        <WasmView />
         <Divider />
         <List>
           {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
