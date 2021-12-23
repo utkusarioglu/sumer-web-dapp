@@ -8,6 +8,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Theme from "_/__theme";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallbackView from "_views/error-fallback/ErrorFallback.view";
+import { HelmetProvider } from "react-helmet-async";
 import { startEthereum, startUser } from "_/__startup";
 
 ReactDOM.render(
@@ -16,7 +17,9 @@ ReactDOM.render(
       <Provider store={store}>
         <Theme>
           <CssBaseline />
-          <AppLayout />
+          <HelmetProvider>
+            <AppLayout />
+          </HelmetProvider>
         </Theme>
       </Provider>
     </ErrorBoundary>
