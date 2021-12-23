@@ -16,7 +16,8 @@
   "features": {
     "kubectl-helm-minikube": {
       "kubectl": "latest",
-      "helm": "latest",
-    }
+      "helm": "latest"
+    },
+    "github-cli": "latest"
   }
 }
