@@ -1,16 +1,19 @@
 import type { FC } from "react";
 import type { FallbackProps } from "react-error-boundary";
 import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
 
 const ErrorFallbackView: FC<FallbackProps> = ({
   error,
   resetErrorBoundary,
 }) => {
   return (
-    <div role="alert">
-      {error}
-      <Button onClick={resetErrorBoundary}>Try again</Button>
-    </div>
+    <Container role="alert">
+      {error.message}
+      <Button onClick={resetErrorBoundary} variant="contained">
+        Try again
+      </Button>
+    </Container>
   );
 };
 
