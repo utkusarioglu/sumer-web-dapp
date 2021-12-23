@@ -12,6 +12,7 @@ import { selectUserProfile } from "_/slices/user/user.slice";
 import { setUserDrawerOpen, setWeb3DrawerOpen } from "_/slices/app/app.slice";
 import { setAppDrawerOpen } from "_/slices/app/app.slice";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import { APP_NAME } from "_/__config";
 
 const AppBarView = () => {
   const userProfile = useSelector(selectUserProfile);
@@ -32,7 +33,7 @@ const AppBarView = () => {
           </IconButton>
           <Box sx={{ flexGrow: 1 }}>
             <Typography variant="h6" noWrap component="div" align="center">
-              Sumer
+              {APP_NAME}
             </Typography>
           </Box>
           {!!userProfile ? (
