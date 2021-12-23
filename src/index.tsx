@@ -5,15 +5,14 @@ import { Provider } from "react-redux";
 import AppLayout from "_layouts/app/App.layout";
 import CssBaseline from "@mui/material/CssBaseline";
 import { startEthereum, startUser } from "_/__startup";
-import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "_/__theme";
+import Theme from "_/__theme";
 
 ReactDOM.render(
   <Provider store={store}>
-    <ThemeProvider theme={theme}>
+    <Theme>
       <CssBaseline />
       <AppLayout />
-    </ThemeProvider>
+    </Theme>
   </Provider>,
   document.getElementById("root")
 );
