@@ -5,6 +5,8 @@ import Container from "@mui/material/Container";
 import { Typography } from "@mui/material";
 import { AppBarShimView } from "../app-bar/AppBar.view";
 import { BottomNavigationShimView } from "../bottom-navigation/BottomNavigation.view";
+import { Helmet } from "react-helmet-async";
+import { APP_NAME } from "_/__config";
 
 const BlockListView = () => {
   const time = useSelector(selectTime);
@@ -36,6 +38,9 @@ const BlockListView = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{APP_NAME} - Blocks</title>
+      </Helmet>
       <AppBarShimView />
       <Container disableGutters>
         {list.map((item) => (
