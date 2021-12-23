@@ -7,6 +7,10 @@ declare global {
       WALLET_CONNECT_API_KEY?: string;
     }
   }
+
+  interface Window {
+    ethereum: any;
+  }
 }
 
 export {};
