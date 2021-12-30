@@ -2,7 +2,7 @@ export class WasmService {
   private instance: any;
 
   public async init() {
-    const module = await require("/usr/src/app/wasm/build/wasm.js");
+    const module = await require("/usr/src/app/wasm/build/bin/wasm.js");
     const instance = await module.default();
     this.instance = instance;
   }
