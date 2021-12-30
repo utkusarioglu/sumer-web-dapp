@@ -34,17 +34,17 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: appPort
+            - name: app-port
               containerPort: {{ .Values.appPort }}
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /
-              port: http
+              port: app-port
           readinessProbe:
             httpGet:
               path: /
-              port: http
+              port: app-port
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
@@ -55,6 +55,10 @@ spec:
                 secretKeyRef:
                   name: ethereum
                   key: infura-api-key
+          volumeMounts:
+            - name: server-config
+              mountPath: /etc/nginx
+              readOnly: true
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -67,3 +71,10 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+        - name: server-config
+          configMap:
+            name: web-dapp-server-config
+            items:
+              - key: nginx.conf
+                path: nginx.conf
