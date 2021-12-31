@@ -3,6 +3,7 @@ WORKDIR /usr/src/app
 COPY web-dapp web-dapp
 WORKDIR /usr/src/app/web-dapp
 ARG WS_URI
+RUN yarn
 RUN yarn build
 
 FROM nginx:alpine
