@@ -1,6 +1,7 @@
 /// <reference path="./types/vendors/cool-images.d.ts" />
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import store from "_/__store";
 import { Provider } from "react-redux";
 import AppLayout from "_layouts/app/App.layout";
@@ -18,7 +19,9 @@ ReactDOM.render(
         <Theme>
           <CssBaseline />
           <HelmetProvider>
-            <AppLayout />
+            <BrowserRouter>
+              <AppLayout />
+            </BrowserRouter>
           </HelmetProvider>
         </Theme>
       </Provider>
