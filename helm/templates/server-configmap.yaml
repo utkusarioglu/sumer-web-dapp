@@ -4,5 +4,4 @@ metadata:
   name: web-dapp-server-config
 data: 
   nginx.conf: |
-{{ .Files.Get "nginx.conf" | indent 4 }}
-
+{{ .Files.Get "files/nginx.conf" | indent 4 }}
